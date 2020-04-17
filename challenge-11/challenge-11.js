@@ -69,7 +69,7 @@
     numbers.push(i)
   }
   console.log("De 0 a 10:" + numbers);
-
+  
   /*
   Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
   criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
