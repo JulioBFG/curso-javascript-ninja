@@ -1,3 +1,6 @@
+(function() {
+  
+
 /*
 Envolva todo o código desse desafio em uma IIFE.
 Crie um arquivo chamado index.html e adicione esse script ao HTML.
@@ -21,7 +24,22 @@ as seguintes características:
   adicionados à idade original (age). Esse método deverá retornar o objeto
   que será instanciado.
 */
-// ?
+function Person(name, lastName, age) {
+  this.name = name;
+  this.lastName = lastName;
+  this.age = age;
+  this.getFullName = function name(params) {
+    return this.name + '' + this.lastName;
+  };
+  this.getAge = function getAge() {
+    return this.age
+  }
+  this.addAge = function addAge() {
+    this.age += arguments[0];
+    return this;
+  }
+  
+}
 
 /*
 Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
@@ -30,20 +48,27 @@ parâmetros corretamente para o construtor para criar as novas pessoas.
 Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
 */
 console.log( 'Novas pessoas criadas à partir de Person:' );
-// ?
+var julio = new Person('Julio', ' Lopes', 20);
+var jones = new Person('Jones', ' John', 23);
+var eduardo = new Person('Eduardo', ' const', 30);
 
 /*
 Mostre no console o nome completo de cada pessoa.
 */
 console.log( '\nNomes das pessoas:' );
 // ?
+console.log(julio.getFullName() );
+console.log(jones.getFullName() );
+console.log(eduardo.getFullName() );
 
 /*
 Mostre no console as idades de cada pessoa, com a frase:
 - "[NOME COMPLETO] tem [IDADE] anos."
 */
 console.log( '\nIdade das pessoas:' );
-// ?
+console.log(julio.getFullName() + ' tem ' + julio.getAge() + ' anos. ' )
+console.log(jones.getFullName() + ' tem ' + jones.getAge() + ' anos. ' )
+console.log(eduardo.getFullName() + ' tem ' + eduardo.getAge() + ' anos. ' )
 
 /*
 Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -52,3 +77,7 @@ cada um. A frase deverá ser no formato:
 */
 console.log( '\nNova idade das pessoas:' );
 // ?
+console.log(julio.getFullName() + ' agora tem ' + julio.addAge(5).getAge() + ' anos. ' )
+console.log(jones.getFullName() + ' agora tem ' + jones.addAge(5).getAge() + ' anos.' )
+console.log(eduardo.getFullName() + ' agora tem ' + eduardo.addAge(5).getAge() + ' anos. ' )
+})()
